@@ -1,0 +1,68 @@
+<div class="read-user-container">
+  <form [formGroup]="ReadUserForm" class="read-user-container">
+    <div mat-dialog-content>
+      <h4>Read User Form</h4>
+      <div class="column content">
+        <div class="cell">
+          <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id" />
+          </mat-form-field>
+        </div>
+
+        <div class="cell">
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="first_name" />
+          </mat-form-field>
+        </div>
+
+        <div class="cell">
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name" />
+          </mat-form-field>
+        </div>
+
+        <div class="cell">
+          <mat-form-field appearance="outline">
+            <mat-label>Position</mat-label>
+            <input matInput formControlName="position" />
+          </mat-form-field>
+        </div>
+
+        <div formArrayName="skills">
+          <div
+            *ngFor="let skill of skills.controls; let i = index"
+            [formGroupName]="i"
+            class="skill-group"
+          >
+            <mat-form-field appearance="outline" class="skill-title">
+              <mat-label>Title</mat-label>
+              <input
+                matInput
+                formControlName="title"
+                placeholder="Skill Title"
+              />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="skill-level">
+              <mat-label>Level</mat-label>
+              <input
+                matInput
+                formControlName="level"
+                placeholder="Skill Level"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <button mat-flat-button (click)="onClose()" class="float-end">
+            OK
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

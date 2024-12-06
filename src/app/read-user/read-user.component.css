@@ -1,0 +1,13 @@
+.skill-group {
+    display: flex;
+    gap: 16px; 
+  }
+  
+  .skill-title {
+    flex: 1;
+  }
+  
+  .skill-level {
+    flex: 1;
+  }
+  
